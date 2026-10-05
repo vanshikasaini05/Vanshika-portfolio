@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vanshika Saini | Portfolio</title>
+
+    <style>
+        /* =========================
+           BASIC SETTINGS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fffaff;
+            color: #353548;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           BACKGROUND DECORATIONS
+        ========================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            background: #eee8ff;
+            border-radius: 50%;
+            top: -120px;
+            left: -120px;
+            z-index: -1;
+            filter: blur(5px);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: #ffe8f1;
+            border-radius: 50%;
+            right: -100px;
+            bottom: -100px;
+            z-index: -1;
+            filter: blur(5px);
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(255, 250, 255, 0.85);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #eee7f5;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 700;
+            color: #8c7bd1;
+        }
+
+        .logo span {
+            color: #e3a4c4;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #55556a;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #9180d7;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 80px 9%;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .small-heading {
+            display: inline-block;
+
+            background: #f0ebff;
+            color: #8171c6;
+
+            padding: 8px 16px;
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 15px;
+
+            color: #343449;
+        }
+
+        .hero h1 span {
+            color: #9a89dd;
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            font-weight: 500;
+            color: #77758b;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #77778a;
+            max-width: 600px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #a99be8, #91b8e8);
+            color: white;
+
+            box-shadow: 0 8px 20px rgba(150, 135, 220, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #7e70bd;
+
+            border: 1px solid #e5def2;
+        }
+
+        .btn-secondary:hover {
+            background: #f6f2ff;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           PROFILE CARD
+        ========================== */
+
+        .profile-card {
+            width: 300px;
+            height: 350px;
+
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+
+            border: 1px solid #eee5f5;
+            border-radius: 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0 20px 50px rgba(120, 105, 160, 0.12);
+
+            position: relative;
+        }
+
+        .profile-circle {
+            width: 190px;
+            height: 190px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #eee8ff,
+                #dcecff,
+                #ffe5ef
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 60px;
+            font-weight: 700;
+            color: #8d7bce;
+
+            border: 8px solid white;
+
+            box-shadow: 0 15px 35px rgba(140, 120, 180, 0.15);
+        }
+
+        .floating {
+            position: absolute;
+
+            background: white;
+            padding: 10px 16px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            box-shadow: 0 8px 25px rgba(100, 90, 130, 0.12);
+
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating.one {
+            top: 35px;
+            left: -25px;
+            color: #8c7bd1;
+        }
+
+        .floating.two {
+            bottom: 40px;
+            right: -25px;
+            color: #d58cac;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            padding: 90px 9%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading span {
+            color: #9988dc;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            font-size: 38px;
+            color: #343449;
+            margin-top: 5px;
+        }
+
+        .section-heading p {
+            color: #858397;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 35px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.75);
+
+            border: 1px solid #eee6f5;
+            border-radius: 25px;
+
+            padding: 35px;
+
+            box-shadow: 0 15px 40px rgba(120, 105, 150, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-card h3 {
+            color: #8d7cd0;
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        .about-card p {
+            color: #77778a;
+            font-size: 15px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-container {
+            max-width: 1050px;
+            margin: auto;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 12px 20px;
+
+            border-radius: 30px;
+
+            background: white;
+            border: 1px solid #ece5f5;
+
+            color: #66657b;
+
+            box-shadow: 0 8px 20px rgba(120, 100, 150, 0.06);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-4px);
+            background: #f4f0ff;
+            color: #8674cc;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.8);
+
+            border: 1px solid #eee6f5;
+            border-radius: 25px;
+
+            padding: 30px;
+
+            box-shadow: 0 15px 35px rgba(120, 100, 150, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-icon {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #a69dc1;
+
+            font-size: 23px;
+
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+            color: #7d7ba3;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #7d7c8d;
+            font-size: 14px;
+        }
+
+        .project-tag {
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding: 6px 12px;
+
+            border-radius: 15px;
+
+            background: #f8edf5;
+            color: #c882a6;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================== */
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 18px;
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background: #ddd5f0;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 60px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 7px;
+            top: 4px;
+
+            width: 23px;
+            height: 23px;
+
+            border-radius: 50%;
+
+            background: #a89ae5;
+
+            border: 5px solid #f7f3ff;
+        }
+
+        .timeline-item h3 {
+            color: #44435a;
+            font-size: 21px;
+        }
+
+        .timeline-item h4 {
+            color: #9f90d4;
+            font-size: 15px;
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: #605f6f;
+            font-size: 14px;
+        }
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================== */
+
+        .achievement-box {
+            max-width: 900px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .achievement {
+            background: white;
+
+            border: 1px solid #eee6f4;
+            border-radius: 22px;
+
+            padding: 25px;
+
+            box-shadow: 0 12px 30px rgba(120, 100, 150, 0.07);
+
+            transition: 0.3s;
+        }
+
+        .achievement:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement h3 {
+            color: #8d7bd0;
+            margin-bottom: 8px;
+        }
+
+        .achievement p {
+            color: #7c7b8e;
+            font-size: 14px;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+
+            background: linear-gradient(
+                135deg,
+                #f4efff,
+                #edf6ff
+            );
+
+            border: 1px solid #e4ddf3;
+
+            border-radius: 28px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            box-shadow: 0 15px 35px rgba(120, 100, 160, 0.08);
+        }
+
+        .education-card h3 {
+            color: #6257a0;
+            font-size: 23px;
+        }
+
+        .education-card h4 {
+            color: #77758b;
+            margin: 7px 0;
+        }
+
+        .education-card p {
+            color: #858397;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.8);
+
+            border: 1px solid #eee6f5;
+
+            border-radius: 30px;
+
+            padding: 45px;
+
+            box-shadow: 0 15px 40px rgba(120, 100, 150, 0.08);
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            color: #3c3b51;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #7d7b8d;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            color: #858397;
+
+            font-size: 13px;
+
+            border-top: 1px solid #eee7f4;
+
+            background: #fffaff;
+        }
+
+        footer span {
+            color: #9a88d8;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 70px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-box {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                width: 270px;
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .section-heading h2 {
+                font-size: 31px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .floating.one {
+                left: -10px;
+            }
+
+            .floating.two {
+                right: -10px;
+            }
+        }
+        .profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+        <div class="logo">
+            Vanshika<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <div class="small-heading">
+                ✦ Welcome to my portfolio
+            </div>
+
+            <h1>
+                Hi, I'm <span>Vanshika.</span>
+            </h1>
+
+            <h2>
+                B.Tech Student • Robotics & Artificial Intelligence
+            </h2>
+
+            <p>
+                I am a B.Tech student passionate about software development,
+                problem-solving, robotics and emerging technologies.
+                Currently strengthening my skills in C++, Data Structures
+                and Algorithms while exploring AI and robotics through
+                practical projects.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://www.linkedin.com/in/vanshika-saini-044515301/"
+                    target="_blank"
+                    class="btn btn-primary"
+                >
+                    LinkedIn ↗
+                </a>
+
+                <a href="#projects" class="btn btn-secondary">
+                    View My Projects
+                </a>
+                
+                <a href="Vanshika saini resume.pdf" target="_blank" class="btn btn-secondary">
+    Download Resume ↓
+</a>
+ 
+        </div>
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-card">
+
+            <div class="floating one">
+                C++ • DSA
+            </div>
+
+            <div class="profile-circle">
+                 <img src="profile.jpeg" alt="Vanshika Saini">
+            </div>
+
+            <div class="floating two">
+                AI • Robotics
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-heading">
+
+            <span>Get to know me</span>
+
+            <h2>About Me</h2>
+
+            <p>A little about my journey and interests</p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-card">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am Vanshika Saini, currently pursuing B.Tech in
+                    Robotics and Artificial Intelligence at Chandigarh
+                    Engineering College. I am interested in software
+                    development, programming and problem-solving.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <h3>What I Do</h3>
+
+                <p>
+                    I am currently focusing on C++, Data Structures and
+                    Algorithms and core computer science concepts.
+                    Alongside software, I have practical exposure to
+                    robotics, sensors, actuators and AI-based projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <div class="section-heading">
+
+            <span>My toolkit</span>
+
+            <h2>Skills</h2>
+
+            <p>Technologies and concepts I am learning and working with</p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <div class="skill">C++</div>
+
+            <div class="skill">Data Structures & Algorithms</div>
+
+            <div class="skill">OOP</div>
+
+            <div class="skill">DBMS</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">JavaScript</div>
+
+            <div class="skill">Git</div>
+
+            <div class="skill">GitHub</div>
+
+            <div class="skill">Robotics</div>
+
+            <div class="skill">Sensors & Actuators</div>
+
+            <div class="skill">Artificial Intelligence</div>
+
+            <div class="skill">Problem Solving</div>
+
+            <div class="skill">Teamwork</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <div class="section-heading">
+
+            <span>What I've worked on</span>
+
+            <h2>Projects</h2>
+
+            <p>Some of my academic and innovation-driven projects</p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    StepVolt – Smart Footstep Energy Harvesting
+                </h3>
+
+                <p>
+                    A smart energy-harvesting concept using piezoelectric
+                    sensors and electromagnetic induction to generate
+                    electrical energy from footsteps.
+                </p>
+
+                <span class="project-tag">
+                    IEEE Project
+                </span>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🌊
+                </div>
+
+                <h3>
+                    AI Oil Spill Detection & Monitoring
+                </h3>
+
+                <p>
+                    An AI-based solution using satellite/SAR imagery and
+                    AIS data to detect oil spills, monitor their spread and
+                    help identify vessels potentially associated with the spill.
+                </p>
+
+                <span class="project-tag">
+                    Smart India Hackathon
+                </span>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Object Detection Robotic Model
+                </h3>
+
+                <p>
+                    A robotics training project involving sensors and
+                    robotic systems to explore object detection concepts
+                    and practical automation applications.
+                </p>
+
+                <span class="project-tag">
+                    Robotics Training
+                </span>
+
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    💧
+                </div>
+
+                <h3>
+                    Water Droplet Detection Model
+                </h3>
+
+                <p>
+                    A practical training project focused on sensor-based
+                    detection of water droplets and understanding their
+                    applications in robotic systems.
+                </p>
+
+                <span class="project-tag">
+                    AI & Robotics
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+
+        <div class="section-heading">
+
+            <span>My experience</span>
+
+            <h2>Experience & Training</h2>
+
+            <p>Practical learning beyond the classroom</p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Robotics & AI Trainee</h3>
+
+                <h4>Aerobot Pvt. Ltd.</h4>
+
+                <p>
+                    Received hands-on training in robotics and AI with
+                    practical exposure to sensors, actuators, drone
+                    fundamentals and robotic systems. Worked on object
+                    detection and water droplet detection projects.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>IEEE Technical Projects</h3>
+
+                <h4>Innovation & Project Development</h4>
+
+                <p>
+                    Participated in technical innovation activities and
+                    contributed to the development of StepVolt, a smart
+                    footstep energy harvesting system.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>Smart India Hackathon</h3>
+
+                <h4>Team Project</h4>
+
+                <p>
+                    Won the internal round of Smart India Hackathon with
+                    a technology-driven solution for oil spill detection
+                    and monitoring.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACHIEVEMENTS
+    ========================== -->
+
+    <section id="achievements">
+
+        <div class="section-heading">
+
+            <span>Milestones</span>
+
+            <h2>Achievements</h2>
+
+            <p>Some highlights from my academic journey</p>
+
+        </div>
+
+
+        <div class="achievement-box">
+
+
+            <div class="achievement">
+
+                <h3>🏆 SIH Internal Round</h3>
+
+                <p>
+                    Won the internal round of Smart India Hackathon
+                    with a team-based technology solution.
+                </p>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>💡 IEEE Participation</h3>
+
+                <p>
+                    Participated in technical innovation activities
+                    and contributed to engineering projects.
+                </p>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>⚡ StepVolt Project</h3>
+
+                <p>
+                    Contributed to the development of a smart footstep
+                    energy harvesting system.
+                </p>
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>🤖 Robotics Training</h3>
+
+                <p>
+                    Completed practical training involving robotics,
+                    sensors, actuators and AI-based applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+        <div class="section-heading">
+
+            <span>My education</span>
+
+            <h2>Education</h2>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>
+                Chandigarh Engineering College
+            </h3>
+
+            <h4>
+                Bachelor of Technology (B.Tech)
+            </h4>
+
+            <p>
+                Specialisation: Robotics and Artificial Intelligence
+            </p>
+
+            <p>
+                Currently Pursuing • 3rd Year
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="section-heading">
+
+            <span>Let's connect</span>
+
+            <h2>Contact Me</h2>
+
+            <p>I'm open to internship and learning opportunities</p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h2>Let's build something together.</h2>
+
+            <p>
+                Interested in internships, software development,
+                technology and real-world projects.
+            </p>
+
+            <a
+                href="https://www.linkedin.com/in/vanshika-saini-044515301/"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                Connect on LinkedIn ↗
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Vanshika Saini.
+        Built with <span>HTML & CSS</span>.
+
+    </footer>
+
+
+</body>
+</html>
